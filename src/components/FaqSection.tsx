@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import FaqItem from "./FaqItem";
+import FaqItem from "@/components/Faqitem";
 
 const faqs = [
   {

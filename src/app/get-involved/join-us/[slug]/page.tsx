@@ -1,5 +1,5 @@
 import React from "react";
-import { GET_POST_BY_SLUG } from "lib/graphqlRequest"; // Import the query
+import { GET_POST_BY_SLUG } from "@/lib/graphqlRequest"; // Import the query
 
 interface Post {
   id: string;
