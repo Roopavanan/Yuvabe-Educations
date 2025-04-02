@@ -1,11 +1,18 @@
 import React from "react";
-import { GET_POST_BY_SLUG } from "@/lib/graphqlRequest"; // Import the query
+import { GET_POST_BY_SLUG } from "@/lib/graphqlRequest";
 
 interface Post {
   id: string;
   title: string;
   content: string;
   date: string;
+}
+
+// Define the expected props type
+interface PageProps {
+  params: {
+    slug: string;
+  };
 }
 
 const fetchPost = async (slug: string) => {
@@ -27,7 +34,7 @@ const fetchPost = async (slug: string) => {
   return result?.data?.postBy || null;
 };
 
-const PostPage = async ({ params }: { params: { slug: string } }) => {
+const PostPage = async ({ params }: PageProps) => {
   const post = await fetchPost(params.slug);
 
   if (!post) {
