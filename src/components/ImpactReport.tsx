@@ -43,7 +43,7 @@ export default function ImpactReport() {
           <p className="mt-2 text-gray-500 text-[24px]">View Yuvabe's Impact Report.</p>
 
           <motion.a
-            href="#"
+            href="https://heyzine.com/flip-book/a7ee0bc0d2.html"
             className="inline-block mt-6 px-6 py-3 bg-[#592AC7] text-white font-semibold rounded-lg shadow-md"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

@@ -1,7 +1,15 @@
 "use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
 
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+
+// Dynamically Import Lottie Player to prevent SSR errors
+const Player = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  { ssr: false }
+);
 const containerVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -19,31 +27,37 @@ const imageVariants = {
 const testimonials = [
   {
     text: "Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    author: "moni",
+    author: "Moni",
     bgColor: "bg-green-400",
     rotate: 10,
     icon: "✨",
   },
   {
     text: "Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    author: "moni",
+    author: "Moni",
     bgColor: "bg-yellow-400",
-    rotate: -0.81,
+    rotate: -8,
     icon: "🌼",
   },
   {
     text: "Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    author: "moni",
+    author: "Moni",
     bgColor: "bg-blue-400",
-    rotate: 8.75,
+    rotate: 8,
     icon: "⭐",
   },
 ];
 
-
 const FullYearProgram = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <>
+      {/* ========== Full Year Program Section ========== */}
       <section className="py-12 px-6 md:px-16 lg:px-24 text-center">
         {/* Heading Section */}
         <motion.div
@@ -52,102 +66,77 @@ const FullYearProgram = () => {
           animate="visible"
           className="mb-8"
         >
-          <motion.h2 className="text-3xl md:text-6xl font-bold text-[#592AC7] pt-18">
-             NESS School
+          <motion.h2 className="text-3xl md:text-6xl font-semibold font-primary text-[#592AC7] pt-18">
+            NESS School
           </motion.h2>
-          <motion.h3 className="text-xl md:text-2xl font-bold mt-2">
+          <motion.h3 className="text-xl md:text-3xl font-semibold font-primary mt-4">
             Full Year Program
           </motion.h3>
-          <motion.p className="text-gray-600 mt-4 max-w-6xl mx-auto text-start text-[18px]">
-            Providing STEAM education to Auroville bio- region schools Lorem
-            Ipsum is simply dummy text of the printing and typesetting industry.
-            Lorem Ipsum has been the industry's standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only
-            five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+          <motion.p className="text-[#000000] mt-4 max-w-6xl mx-auto text-start text-[18px] leading-[30px] font-secondary">
+            <p className="mb-[10px]">
+              We believe learning should be a thrilling journey, not just a task. Our STEAM calendar
+              brings science, technology, engineering, arts, and math to life in fun, hands-on ways
+              that encourage curiosity and creativity. From building cool gadgets to exploring new
+              forms of art, every day is a chance to think, create, and discover something exciting.
+            </p>
+            With Yuvabe’s youth volunteers joining in, students get fresh perspectives, mentorship,
+            and interactive experiences that spark curiosity and confidence. If you love sharing
+            knowledge, exploring new ideas, or just being part of something inspiring, come
+            collaborate with us! Let’s create, learn, and grow together.
           </motion.p>
         </motion.div>
 
-        {/* Image Grid Section */}
+        {/* ========== Image Grid Section ========== */}
         <motion.div
-          className="grid grid-cols-3 gap-4 md:gap-6 justify-center max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <motion.img
-            variants={imageVariants}
-            src="/image1.jpg"
-            className="w-full h-32 md:h-40 object-cover rounded-lg"
-          />
-          <motion.img
-            variants={imageVariants}
-            src="/image2.jpg"
-            className="w-full h-48 md:h-56 object-cover rounded-lg col-span-2"
-          />
-          <motion.img
-            variants={imageVariants}
-            src="/image3.jpg"
-            className="w-full h-32 md:h-40 object-cover rounded-lg"
-          />
-          <motion.img
-            variants={imageVariants}
-            src="/image4.jpg"
-            className="w-full h-40 md:h-48 object-cover rounded-lg"
-          />
-          <motion.img
-            variants={imageVariants}
-            src="/image5.jpg"
-            className="w-full h-32 md:h-40 object-cover rounded-lg"
-          />
-          <motion.img
-            variants={imageVariants}
-            src="/image6.jpg"
-            className="w-full h-48 md:h-56 object-cover rounded-lg col-span-2"
-          />
+          {[1, 2, 3, 4, 5, 6].map((num) => (
+            <motion.div key={num} variants={imageVariants} className="grid gap-4">
+              <Image
+                src={`/images/ness/image${num}.png`}
+                alt={`NESS Image ${num}`}
+                width={500}
+                height={500}
+                className="w-full h-auto rounded-lg object-cover"
+                priority
+              />
+            </motion.div>
+          ))}
         </motion.div>
       </section>
 
-      <section className=" py-16 px-6 md:px-16 lg:px-24 text-center bg-[#fef9f3]">
+      {/* ========== Students Testimonial Section ========== */}
+      <section className="py-16 text-center bg-[#fef9f3]">
         {/* Heading */}
         <h2 className="text-3xl md:text-6xl font-semibold font-primary text-black mb-8">
           Students Testimonial
         </h2>
 
-        {/* SVG Decorative Line */}
-        <div className="relative flex justify-center items-center">
-          <Image
-            src="/images/arrow.svg"
-            alt="Decorative Line"
-            width={1000}
-            height={100}
-            className="absolute top-1/2 transform -translate-y-1/2 w-[90%] md:w-full"
-          />
-
-          {/* Testimonial Cards */}
-          <div className="flex flex-col md:flex-row  justify-centergap-8 md:gap-16  px-4 relative mt-16">
-            {testimonials.map((item, index) => (
-              <motion.div
-                key={index}
-                className={`p-6 w-[220px] md:w-[260px] shadow-lg rounded-lg ${item.bgColor} relative`}
-                initial={{ opacity: 0, y: 30, rotate: 0 }} 
-                animate={{ opacity: 1, y: 0, rotate: item.rotate }} 
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
-                <span className="absolute top-2 right-4 text-xl">
-                  {item.icon}
-                </span>
-                <p className="text-black italic">{item.text}</p>
-                <p className="text-black font-bold text-right mt-4">
-                  - {item.author}
-                </p>
-              </motion.div>
-            ))}
+        {/* Lottie Animation */}
+        {isClient && (
+          <div className="relative flex justify-center items-center">
+            <Player autoplay loop src="/images/ness/testimonial2.json" className="w-full max-w-4xl" />
           </div>
+        )}
+
+        {/* Testimonial Cards */}
+        <div className="flex flex-wrap justify-center gap-8 mt-12">
+          {testimonials.map((item, index) => (
+            <motion.div
+              key={index}
+              className={`p-6 w-[260px] shadow-lg rounded-lg ${item.bgColor} relative`}
+              initial={{ opacity: 0, y: 30, rotate: 0 }}
+              animate={{ opacity: 1, y: 0, rotate: item.rotate }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <span className="absolute top-2 right-4 text-xl">{item.icon}</span>
+              <p className="text-black italic">{item.text}</p>
+              <p className="text-black font-bold text-right mt-4">- {item.author}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
     </>

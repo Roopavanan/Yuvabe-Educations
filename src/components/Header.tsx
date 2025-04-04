@@ -142,7 +142,7 @@ const Header = () => {
         <div className="flex items-center">
           <Link href="/">
             <Image 
-              src="/images/logo.png" 
+              src="/logo.svg" 
               alt="Logo" 
               width={isMobile ? 40 : 50} 
               height={isMobile ? 40 : 50} 
@@ -271,7 +271,7 @@ const Header = () => {
               </ul>
             )}
           </div>
-          <Button href="/donate" className="hover:bg-[#592AC7]/90 transition duration-300">Donate</Button>
+          <Button href="/get-involved/support-us" className="hover:bg-[#592AC7]/90 transition duration-300">Donate</Button>
         </div>
       </nav>
 

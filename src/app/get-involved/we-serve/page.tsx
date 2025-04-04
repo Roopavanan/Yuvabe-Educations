@@ -1,224 +1,293 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 
-const WeServe = () => {
+const Player = dynamic(() => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player), { ssr: false });
+
+
+const initiatives = [
+  {
+    image: "/images/class.webp",
+    title: "Educational Programs",
+    description:
+      "Bringing education to underprivileged communities through innovative learning methods."
+  },
+  {
+    image: "/images/sarcon.webp",
+    title: "Beach Cleanups",
+    description:
+      "Organizing cleanup drives to protect marine life and promote environmental sustainability."
+  },
+  {
+    image: "/images/outdoor.webp",
+    title: "Performing Arts",
+    description:
+      "Empowering youth through cultural performances and artistic expression."
+  }
+];
+
+const blogPosts = [
+  {
+    image: "/images/journey.webp",
+    title: "Navigating Transformation: My Yuvabe Journey",
+    description:
+      "A heartfelt account of a Yuvabe alumni where he talks about discovering his passion, overcoming adversity..."
+  },
+  {
+    image: "/images/running.webp",
+    title: "United by the Joy of Running",
+    description:
+      "Auroville Marathon reignites the spirit of teamwork, oneness and collaboration within the Yuvabe team..."
+  },
+  {
+    image: "/images/world.webp",
+    title: "Shaping lives and the future of the world",
+    description:
+      "Think back to your school days. Can you recall any teachers who left a lasting impression on you? Chances are, you..."
+  }
+];
+
+const page = () => {
   return (
-   <section className="w-full">
-       <div className="absolute inset-0 flex items-center justify-center bg-[#592AC7]">
-      <Image
-            src="/assets/weserve/hema.gif" // Replace with your actual GIF path
-            alt="hero"
-            width={200}  // Adjust size as needed
-            height={200}
-            unoptimized  
-            className="relative w-1/2 mt-66"
-          />
-       </div>
-      {/*Purple text box*/}
-         <div className="relative mt-120 md:bottom-12 md:left-12 text-white p-6 md:p-8 max-w-sm md:max-w-md">
-          <h2 className="text-3xl md:text-4xl font-primary font-semibold">We Serve</h2>
-          <p className="mt-2 text-base md:text-lg font-secondary">
-            We are committed to providing support to our community, and engage in
-            opportunities where we can make a difference.
-          </p>
-        </div>
-      
+    <>
+      <section className="relative bg-[#592AC7] text-white md:min-h-[720px] min-h-[600px] flex items-start md:items-start lg:items-center justify-center px-6 md:px-12 overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8 w-full relative">
+          {/* Left Side - Text Content */}
+          <div className="text-center md:text-left">
+            <h2 className="text-3xl md:text-[64px] font-primary font-semibold pt-[32px] md:pt-[18px] lg:pt-0">
+              We Serve
+            </h2>
+            <p className="mt-4 text-base md:text-lg font-secondary max-w-lg mx-auto md:mx-0">
+              We are committed to providing support to our community and
+              engaging in opportunities where we can make a difference.
+            </p>
+          </div>
 
-      {/* Centered Title Section */}
-      <div className="max-w-4xl mx-auto text-center px-6 pt-24">
-        <h2 className="text-2xl md:text-4xl font-semibold font-primary text-[#000000]">
-          Enabling Educational<br/> Empowerment
-        </h2>
-      </div>
-
-      {/* Two-Column Layout (Image Left, Content Right) */}
-      <div className="max-w-6xl mx-auto px-6 pt-10 pb-16 flex flex-col lg:flex-row items-center gap-10">
-        {/* Left Side - Image & Shapes */}
-        <div className="relative w-full max-w-md lg:w-1/2">
-          {/* Placeholder for Shapes */}
-          <Image
-                    src="/assets/weserve/yc.svg"
-                    alt="yc"
-                    width={50}
-                    height={50}
-                    className="absolute left-80 bottom-10 z-10 "
-                  />
-          <Image
-                    src="/assets/weserve/bc.svg"
-                    alt="bc"
-                    width={150}
-                    height={150}
-                    className="absolute left-55 bottom-45"
-                  />
-          <Image
-                    src="/assets/weserve/polygon.svg"
-                    alt="polygon"
-                    width={75}
-                    height={75}
-                    className="absolute left-25 bottom-15 z-10"
-                  />
-
-          {/* Image Placeholder */}
-          <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
-            <Image
-              src="/assets/weserve/serveimage.png" // Replace with actual image path
-              alt="Children learning"
-              layout="fill"
-              objectFit="contain"
+          {/* Right Side - Lottie Animation */}
+          <div className="flex justify-center md:justify-end relative w-full">
+            <Player
+              autoplay
+              keepLastFrame
+              loop={false}
+              src="/images/hema.json"
+              className="w-[350px] h-[350px] max-w-xl sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[800px] lg:h-[800px]
+        relative   top-20 lg:top-20 md:top-60"
             />
           </div>
         </div>
+      </section>
 
-        {/* Right Side - Text Content */}
-        <div className="w-full lg:w-1/2 text-center lg:text-left">
-          <p className="text-[#000000] font-secondary text-base md:text-lg">
-          With the mission to enable educational empowerment among school children, we created a project based, interdisciplinary curriculum that brings Science, Technology, Engineering, Art & Math together under one umbrella. The course is designed with the intention of not just making science fun for Auroville’s free progress schools but also pushing the students to think out of the box and becoming self learners.
-          </p>
-          <p className="mt-4 text-gray-600 text-base md:text-lg">
-          Each year culminates with the annual STEAM Fest where all the students present their projects to the community.{" "}
-            <a href="#" className="text-[#000000] font-semibold underline">
-              Read more about this one of a kind educational fair!
-            </a>
-          </p>
+      <section className="relative bg-white text-black py-16 px-6 md:px-12 lg:px-20">
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl md:text-5xl font-bold text-center mb-12"
+        >
+          Enabling Educational Empowerment
+        </motion.h2>
 
-          <p className="mt-6 font-bold font-secondary text-[#000000]">
-          Your support will help us take this unique educational offering to more schools in the region!
-          </p>
+        {/* Content Wrapper */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Side - Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <Image
+              src="/images/ser-edu.webp" // Update with the correct path
+              alt="Educational Empowerment"
+              width={600}
+              height={600}
+              className="rounded-lg"
+            />
+          </motion.div>
 
-          {/* Support Button */}
-          <button className="mt-6 px-6 py-3 bg-[#662D91] text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition">
-            Support Us
-          </button>
+          {/* Right Side - Text & Button */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <p className="text-base md:text-lg mb-6">
+              With the mission to enable educational empowerment among school
+              children, we created a project-based, interdisciplinary curriculum
+              that brings Science, Technology, Engineering, Art & Math together
+              under one umbrella.
+            </p>
+            <p className="text-base md:text-lg mb-6">
+              Each year culminates with the annual STEAM Fest where all the
+              students present their projects to the community.{" "}
+              <a href="#" className="text-[#592AC7] font-semibold underline">
+                Read more about this one-of-a-kind educational fair!
+              </a>
+            </p>
+            <p className="font-bold text-lg mb-6">
+              Your support will help us take this unique educational offering to
+              more schools in the region!
+            </p>
+
+            {/* Button */}
+            <motion.a
+              href="#"
+              className="bg-[#592AC7] text-white font-semibold py-3 px-6 rounded-lg shadow-md inline-block"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Support Us
+            </motion.a>
+          </motion.div>
         </div>
-      </div>
+      </section>
 
-
-      <section className="w-full bg-[#FFF8E6] py-16 px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-black font-primary">
+      <section className="bg-[#FEF9EC] text-black py-16 px-6 md:px-12 lg:px-20">
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl md:text-5xl font-bold text-center mb-4"
+        >
           Other Community Initiatives
-        </h2>
+        </motion.h2>
 
-        {/* Subtitle */}
-        <p className="mt-4 text-gray-700 text-base md:text-lg max-w-2xl mx-auto">
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center text-base md:text-lg max-w-3xl mx-auto mb-12"
+        >
           Apart from spreading educational empowerment, our team is also
           committed to being an active force for good in the community in many
           other ways. From beach cleanups to performing arts, we do it all!
-        </p>
+        </motion.p>
 
-        {/* Initiative Cards */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Placeholder 1 */}
-          <Image
-          src="/assets/weserve/image1.png"
-          alt="image"
-          width={200}
-          height={200}
-          className="w-full h-full object-cover rounded-lg"
-        />
-        <Image
-          src="/assets/weserve/image2.png"
-          alt="image"
-          width={200}
-          height={200}
-          className="w-full h-full object-cover rounded-lg"
-        />
-        <Image
-          src="/assets/weserve/image3.png"
-          alt="image"
-          width={200}
-          height={200}
-          className="w-full h-full object-cover rounded-lg"
-        />
-          </div>
-          </div>
+        {/* Cards Container */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {initiatives.map((initiative, index) => (
+            <motion.div
+              key={index}
+              className="relative group overflow-hidden rounded-lg  cursor-pointer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              {/* Image - Always Visible */}
+              <Image
+                src={initiative.image}
+                alt={initiative.title}
+                width={400}
+                height={300}
+                className="w-full h-[250px] object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+
+              {/* Hover Overlay - Light White (Opacity 10%) */}
+              <div className="absolute inset-0 bg-white opacity-10 group-hover:opacity-50 transition-opacity duration-300"></div>
+
+              {/* Hover Text - Fade In */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6">
+                <h3 className="text-black text-xl font-bold">
+                  {initiative.title}
+                </h3>
+                <p className="text-black text-sm mt-2 font-semibold">
+                  {initiative.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
       </section>
 
-
-    <section className="w-full bg-[#592AC7] text-white py-24 px-6">
-      {/* Section Title */}
-      <h2 className="text-2xl md:text-4xl font-semibold text-center">
-        Read more about our community <br /> activities in and around Auroville
-      </h2>
-
-      {/* Card Container */}
-      <div className="max-w-4xl mx-auto mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Card 1 */}
-        <div className="bg-white text-black p-6 rounded-lg shadow-lg z-10">
+      <section className="relative bg-[#5F2DC6] text-white py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
+        {/* Background GIF */}
+        <div className="absolute inset-0 flex justify-center items-center  ">
           <Image
-            src="/assets/weserve/image4.png"
-            alt="Navigating Transformation"
-            width={300}
-            height={200}
-            className="w-full h-40 object-cover rounded-lg"
+            src="/images/planewhite.gif" // Change to your GIF file path
+            alt="Animated Background"
+            layout="fill"
+            objectFit="contain"
+            className="hidden md:block top-[-20px] md:top-[-50px] left-0 w-full"
+            // Adjust opacity for better readability
           />
-          <h3 className="mt-4 font-semibold text-lg">
-            Navigating Transformation: My Yuvabe Journey
-          </h3>
-          <p className="mt-2 text-gray-600 text-sm">
-            A heartfelt account of a Yuvabe alumni where he talks about
-            discovering his passion, overcoming adversity...
-          </p>
         </div>
 
-        {/* Card 2 */}
-        <div className="bg-white text-black p-6 rounded-lg shadow-lg z-10">
-          <Image
-            src="/assets/weserve/image5.png"
-            alt="United by the Joy of Running"
-            width={300}
-            height={200}
-            className="w-full h-40 object-cover rounded-lg"
-          />
-          <h3 className="mt-4 font-semibold text-lg">
-            United by the Joy of Running
-          </h3>
-          <p className="mt-2 text-gray-600 text-sm">
-            Auroville Marathon reignites the spirit of teamwork, oneness, and
-            collaboration within the Yuvabe team...
-          </p>
-        </div>
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-3xl md:text-5xl font-semibold text-center relative z-10"
+        >
+          Read more about our community <br /> activities in and around
+          Auroville
+        </motion.h2>
 
-        {/* Card 3 */}
-        <div className="bg-white text-black p-6 rounded-lg shadow-lg z-10">
-          <Image
-            src="/assets/weserve/image6.png"
-            alt="Shaping lives and the future"
-            width={300}
-            height={200}
-            className="w-full h-40 object-cover rounded-lg"
-          />
-          <h3 className="mt-4 font-semibold text-lg">
-            Shaping lives and the future of the world
-          </h3>
-          <p className="mt-2 text-gray-600 text-sm">
-            Think back to your school days. Can you recall any teachers who left
-            a lasting impression on you?
-          </p>
-        </div>
-      </div>
+        {/* Blog Cards */}
+        <motion.div
+          className="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          {blogPosts.map((post, index) => (
+            <motion.div
+              key={index}
+              className="bg-white text-black rounded-[20px] shadow-lg  overflow-hidden p-4 transition-transform duration-300 hover:scale-105"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              {/* Blog Image */}
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={400}
+                height={250}
+                className="w-full h-[200px] object-cover rounded-lg rounded-bl-[43px] rounded-tr-[43px] rounded-tl-[13px] rounded-br-[13px]"
+              />
 
-      {/* Button */}
-      <div className="flex justify-center mt-12">
-        <button className="bg-white text-[#592AC7] px-6 py-3 font-semibold rounded-full shadow-md hover:bg-gray-200 transition">
-          Visit our Blog
-        </button>
-      </div>
+              {/* Blog Content */}
+              <div className="mt-4">
+                <h3 className="text-lg font-bold">{post.title}</h3>
+                <p className="text-sm mt-2">{post.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-      {/* Placeholder for Rocket & Curve Line */}
-      <div className="relative bottom-165 left-8">
-        <Image
-          src="/assets/weserve/plane.gif" // Replace with your exported asset
-          alt="Curve Line"
-          width={1300}
-          height={1300}
-        />
-        </div>
-    </section>
-    </section>
-
-    
+        {/* CTA Button */}
+        <motion.div
+          className="relative z-10 text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <a
+            href="#"
+            className="inline-block bg-white text-[#5F2DC6] font-bold py-3 px-6 rounded-full shadow-md hover:bg-gray-200 transition"
+          >
+            Visit our Blog
+          </a>
+        </motion.div>
+      </section>
+    </>
   );
 };
 
-export default WeServe;
+export default page;

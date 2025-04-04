@@ -71,7 +71,7 @@ const FeaturedPosts: React.FC = () => {
       setPosts([]);
       try {
         const response = await fetch(
-          "http://yuvabe-education-wordpress.local/graphql",
+          "https://wp.yuvabeeducation.com/graphql",
           {
             method: "POST",
             headers: {
