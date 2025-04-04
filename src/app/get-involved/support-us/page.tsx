@@ -45,44 +45,44 @@ export default function SupportUs() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col md:flex-row items-center justify-between px-8 md:px-16 py-12  bg-white min-h-[600px] md:min-h-[800px] ">
+      <section className="relative flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 py-12 bg-white  overflow-hidden">
   {/* Left Side - Centered Text */}
   <motion.div
-    className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-left text-center md:text-left mt-12 md:mt-0"
-    initial={{ opacity: 0, x: -50 }}
-    animate={{ opacity: 1, x: 0 }}
+    className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start text-center md:text-left mt-8 md:mt-0"
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
     transition={{ duration: 0.8 }}
   >
-    <h1 className="text-4xl md:text-[64px] font-semibold font-primary text-[#592Ac7]">
-    Support Us     </h1>
-    <p className="mt-4 text-gray-700 max-w-xl font-secondary  text-[18px]">
-    You have the power to fuel a program that’s more than just upskilling! Be part of something bigger, where growth isn’t just personal; it’s collective. Let’s build the future together!
+    <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-[64px] font-semibold font-primary text-[#592Ac7] leading-snug">
+      Support Us
+    </h1>
+    <p className="mt-4 text-gray-700 font-secondary text-base sm:text-lg max-w-md sm:max-w-lg lg:max-w-xl">
+      You have the power to fuel a program that’s more than just upskilling! Be part of something bigger, where growth isn’t just personal; it’s collective. Let’s build the future together!
     </p>
-    
   </motion.div>
 
-  {/* Right Side - Image in Bottom Right Corner */}
+  {/* Right Side - Image */}
   <motion.div
-    className="absolute bottom-0 right-0 md:w-1/2 flex justify-end"
+    className="w-full md:w-1/2 flex justify-center md:justify-end mt-12 md:mt-0 relative"
     initial={{ opacity: 0, x: 50 }}
-    animate={{ opacity: 1, x: 0 }}
+    whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.8 }}
   >
-    <div className="relative">
-      {/* Floating Shapes */}
+    <div className="relative w-full max-w-[600px] md:max-w-[800px] lg:max-w-[900px]">
+      {/* Floating Shape */}
       <motion.div
-        className="absolute top-50 right-20 w-15 h-15 bg-[#33BED4]"
+        className="absolute top-12 right-10 w-10 h-10 md:w-20 md:h-20 bg-[#33BED4]  z-10"
         animate={{ y: [0, -10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      ></motion.div>
+      />
 
       {/* Image */}
       <Image
-        src="/images/support.jpg"
+        src="/images/getinvolved/support.png"
         alt="Group working on laptop"
-        width={550}
-        height={400}
-        className="w-[400px] md:w-[900px] max-w-[1250px] h-auto"
+        width={900}
+        height={600}
+        className="w-full h-auto left-8 top-12 md:left-18 md:top-15 relative "
       />
     </div>
   </motion.div>
@@ -91,9 +91,10 @@ export default function SupportUs() {
 
 
 
+
       {/* Support Section */}
       <section className="py-16 bg-[#FBF6EF] text-center">
-        <h2 className="text-2xl md:text-5xl font-semibold text-black mb-12">
+        <h2 className="text-xl md:text-5xl font-semibold text-black mb-12">
           Your contribution will help us support
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 px-4 md:px-12">

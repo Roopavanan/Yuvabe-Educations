@@ -725,7 +725,7 @@ export default function Bridge() {
         </h2>
 
         {/* FundraiseUp Widget */}
-        <a href="#XJLHERLT" className=""></a>
+        <a href="#XJLHERLT" className=" justify-center items-center px-10"></a>
       </div>
       {/* Import Component  */}</div>
           </div>

@@ -89,108 +89,109 @@ export default function Home() {
   return (
     <main>
       {/* Hero Section */}
-      <section className="relative flex flex-col md:flex-col lg:flex-row items-center justify-between px-8 md:px-16 py-12 bg-[#FDF8EE] min-h-[800px]">
-        {/* Right Side - Text (Appears First on Mobile, Second on Desktop) */}
+      <section className="relative flex flex-col lg:flex-row items-center justify-between px-6 sm:px-8 md:px-16 py-12 bg-[#FDF8EE] min-h-[800px] overflow-hidden">
+  {/* Right Side - Text */}
+  <motion.div
+    className="w-full md:w-4/5 lg:w-1/2 text-center md:text-left order-1 md:order-1 lg:order-2"
+    initial={{ opacity: 0, x: 50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <h1 className="text-4xl md:text-5xl lg:text-[64px] font-semibold font-primary text-black leading-tight">
+      Empowering Minds, <br />
+      <span className="text-[#592AC7]">Bridging Futures</span>
+    </h1>
+    <p className="mt-4 text-gray-700 max-w-[90%] md:max-w-xl font-secondary text-lg md:text-xl">
+      Empowering young adults with practical skills, hands-on experience,
+      and a purpose-driven community to thrive in a dynamic world.
+    </p>
+    <motion.a
+      href="/about-us"
+      className="mt-6 inline-block px-6 py-3 text-white bg-[#592AC7] rounded-lg shadow-md hover:bg-white hover:text-[#592AC7] transition"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      Know More
+    </motion.a>
+  </motion.div>
+
+  {/* Left Side - Image */}
+  <motion.div
+    className="relative w-full md:w-1/2 flex justify-center md:justify-start mt-10 lg:mt-0 order-2 md:order-2 lg:order-1"
+    initial={{ opacity: 0, x: -50 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.8 }}
+  >
+    <div className="relative w-full max-w-[600px] md:max-w-[750px] lg:max-w-[650px]">
+      {/* Floating Circle */}
+      <motion.div
+        className="absolute top-10 left-40 md:top-20 md:left-60 transform -translate-x-1/2 w-20 h-20 bg-[#91C644] rounded-full z-10"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Floating Triangle */}
+      <motion.div
+        className="absolute bottom-0 left-60  md:bottom-5 md:left-1/2  transform -translate-x-1/2 w-0 h-0 
+          border-l-[45px] border-r-[45px] 
+          border-b-[80px] border-transparent 
+          border-b-[#F8A91E] z-10"
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Main Image */}
+      <Image
+        src="/images/home/hero.webp"
+        alt="Group working on laptop"
+        width={100}
+        height={100}
+        className="w-full h-auto object-contain top-12 right-8 md:top-20 md:right-18 relative z-0"
+      />
+    </div>
+  </motion.div>
+</section>
+
+{/* Client Logo Slider */}
+<section className="bg-white py-10 shadow-lg backdrop-blur-lg flex justify-center items-center overflow-hidden">
+  <div className="w-full max-w-screen-xl px-6 sm:px-8 md:px-10">
+    <motion.div
+      className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center items-center gap-4 sm:gap-12"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: { staggerChildren: 0.2 }
+        }
+      }}
+    >
+      {logos.map((logo, index) => (
         <motion.div
-          className="w-full md:w-4/5 lg:w-1/2 text-center md:text-left order-1 md:order-1 lg:order-2"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          key={index}
+          className="flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeOut",
+            delay: index * 0.1
+          }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-[64px] font-semibold font-primary text-black leading-tight">
-            Empowering Minds, <br />
-            <span className="text-[#592AC7]">Bridging Futures</span>
-          </h1>
-          <p className="mt-4 text-gray-700 max-w-[90%] md:max-w-xl font-secondary text-lg md:text-xl">
-            Empowering young adults with practical skills, hands-on experience,
-            and a purpose-driven community to thrive in a dynamic world.
-          </p>
-          <motion.a
-            href="/about-us"
-            className="mt-6 inline-block px-6 py-3 text-white bg-[#592AC7] rounded-lg shadow-md hover:bg-white hover:text-[#592AC7] transition"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Know More
-          </motion.a>
+          <Image
+            src={logo}
+            alt={`Client logo ${index + 1}`}
+            width={150}
+            height={75}
+            className="w-[100px] sm:w-[140px] md:w-[160px] lg:w-[180px] object-contain transition duration-300"
+          />
         </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
-        {/* Left Side - Image (Appears Second on Mobile, First on Desktop) */}
-        <motion.div
-          className="relative w-full md:w-1/2 flex justify-center md:justify-start order-2 md:order-2 lg:order-1"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="relative">
-            <motion.div
-              className="absolute top-10 left-40 md:top-10 md:left-85 w-26 h-26 bg-[#91C644] rounded-full"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            ></motion.div>
-
-            <motion.div
-              className="absolute bottom-5 left-40 md:bottom-20 md:left-100 w-0 h-0 
-                border-l-[46px] border-r-[46px] 
-                border-b-[82px] border-transparent 
-              border-b-[#F8A91E] z-10"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            ></motion.div>
-
-            <Image
-              src="/images/home/heroimg.webp"
-              alt="Group working on laptop"
-              width={550}
-              height={400}
-              className="relative mx-auto md:mx-0  w-full max-w-[550px] md:w-[750px] h-auto top-18 -left-18 md:top-18 md:-left-60 lg:top-32 lg:-left-18"
-            />
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Hero section End */}
-
-      {/* Client Logo Slider */}
-
-      <section className="bg-white py-10 shadow-lg backdrop-blur-lg flex justify-center items-center overflow-hidden">
-        <div className="w-full max-w-screen-xl px-6 sm:px-8 md:px-10">
-          <motion.div
-            className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center items-center gap-4 sm:gap-12"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.2 }
-              }
-            }}
-          >
-            {logos.map((logo, index) => (
-              <motion.div
-                key={index}
-                className="flex justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeOut",
-                  delay: index * 0.1
-                }}
-              >
-                <Image
-                  src={logo}
-                  alt={`Client logo ${index + 1}`}
-                  width={150}
-                  height={75}
-                  className="w-[100px] sm:w-[140px] md:w-[160px] lg:w-[180px] object-contain transition duration-300"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
 
       {/* client logo slider End */}
 
@@ -276,29 +277,33 @@ export default function Home() {
 
       {/* Through program */}
       <section className="bg-[#FFF9EA] py-12 overflow-hidden">
-        <div className="container max-w-screen-xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center">
-          {/* Left Side - Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative lg:w-1/2 flex justify-center items-center mb-10 lg:mb-0"
-          >
-            <motion.div
-              className="absolute top-0 left-50 md:top-5 md:left-90 w-15 h-15 md:w-26 md:h-26 bg-[#33BED4] rounded-full"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            ></motion.div>
+      <div className="container max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
+    {/* Left Side - Image */}
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="relative lg:w-1/2 flex justify-center items-center mb-10 lg:mb-0"
+    >
+      <motion.div
+  className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-10 h-10 md:w-18 md:h-18 sm:h-12 sm:w-12 bg-[#91C644] rounded-full"
+  animate={{ y: [0, -10, 0] }}
+  transition={{
+    duration: 2,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+></motion.div>
 
-            <Image
-              src="/images/home/program.webp"
-              alt="Children Learning"
-              width={800}
-              height={800}
-              className="w-[280px] md:w-[480px] h-auto max-w-full"
-            />
-          </motion.div>
+      <Image
+        src="/images/home/program.webp"
+        alt="Children Learning"
+        width={800}
+        height={800}
+        className="w-[280px] md:w-[480px] h-auto max-w-full"
+      />
+    </motion.div>
 
           {/* Right Side - Text */}
           <motion.div
@@ -390,18 +395,19 @@ export default function Home() {
 
               {/* Floating Triangle Decoration */}
               <motion.div
-                className="absolute bottom-5 left-5 md:bottom-50 md:left-10 w-0 h-0 rotate-10
-            border-l-[30px] sm:border-l-[40px] md:border-l-[46px] 
-            border-r-[30px] sm:border-r-[40px] md:border-r-[46px] 
-            border-b-[60px] sm:border-b-[75px] md:border-b-[82px] border-transparent 
-          border-b-[#F8A91E] z-10"
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              ></motion.div>
+  className="absolute bottom-5 left-5 md:bottom-12 md:left-10 w-0 h-0 rotate-10
+    border-l-[30px] sm:border-l-[40px] md:border-l-[46px] 
+    border-r-[30px] sm:border-r-[40px] md:border-r-[46px] 
+    border-b-[60px] sm:border-b-[75px] md:border-b-[82px] border-transparent 
+    border-b-[#F8A91E] z-10"
+  animate={{ y: [0, -10, 0] }}
+  transition={{
+    duration: 2,
+    repeat: Infinity,
+    ease: "easeInOut"
+  }}
+></motion.div>
+
             </div>
           </motion.div>
         </div>
@@ -495,8 +501,8 @@ export default function Home() {
           <div className="space-y-28 mt-16">
             {/* Work Section */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }} // Fades in from below
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }} // Only fade in
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="flex flex-col md:flex-row items-center gap-16"
             >
@@ -521,8 +527,8 @@ export default function Home() {
 
             {/* Serve Section */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }} // Fades in from below
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }} // Only fade-in
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 1 }}
               className="flex flex-col md:flex-row-reverse items-center gap-18"
             >
@@ -540,7 +546,7 @@ export default function Home() {
               <div className="md:w-1/2 flex justify-center relative">
                 <motion.div
                   className="absolute top-20 left-6 w-16 h-16 bg-green-400 rounded-full"
-                  animate={{ y: [0, -10, 0] }}
+                  animate={{ y: [0, -10, 0] }} // This keeps bouncing
                   transition={{
                     duration: 2,
                     repeat: Infinity,
@@ -559,8 +565,8 @@ export default function Home() {
 
             {/* Evolve Section */}
             <motion.div
-              initial={{ opacity: 0, y: 50 }} // Fades in from below
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }} // Only fade-in
+              whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 1.5 }}
               className="flex flex-col md:flex-row items-center gap-16"
             >
@@ -579,7 +585,7 @@ export default function Home() {
                 <div className="absolute -top-4 right-8 md:-top-4 md:-right-6 w-24 h-24 bg-orange-400 rotate-12"></div>
                 <div className="relative w-full max-w-lg">
                   <Image
-                    src="/images/home/priya.webp"
+                    src="/images/home/priya.png"
                     alt="Evolve"
                     width={800}
                     height={800}
@@ -718,7 +724,12 @@ export default function Home() {
           </p>
 
           <div className="mt-6 flex justify-center items-center gap-6 ">
-            <form action="https://api.web3forms.com/submit" method="POST" name="newsletter" className="mt-6 flex justify-center items-center gap-6">
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              name="newsletter"
+              className="mt-6 flex justify-center items-center gap-6"
+            >
               <input
                 type="hidden"
                 name="access_key"
@@ -727,11 +738,15 @@ export default function Home() {
 
               <input
                 type="email"
-                name="email" required
+                name="email"
+                required
                 placeholder="Enter Your email"
                 className="w-2/3 px-4 py-3 rounded-lg border border-gray-300 bg-[#FFFFFF] text-black focus:outline-none"
               />
-              <button type="submit" className="bg-[#FFCA2D] hover:bg-yellow-600 text-black font-medium px-6 py-3 rounded-lg">
+              <button
+                type="submit"
+                className="bg-[#FFCA2D] hover:bg-yellow-600 text-black font-medium px-6 py-3 rounded-lg"
+              >
                 Send
               </button>
             </form>
