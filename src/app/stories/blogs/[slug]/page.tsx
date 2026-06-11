@@ -106,7 +106,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
 
         {/* Title */}
-        <h1 className="text-[#592AC7] text-3xl md:text-4xl lg:text-5xl leading-[120%] font-semibold text-center font-primary">
+        <h1 className="text-[#592AC7] text-3xl md:text-4xl lg:text-5xl leading-[120%] font-semibold text-center font-primary lg:max-w-[30ch] m-auto">
           {frontmatter.title}
         </h1>
 
