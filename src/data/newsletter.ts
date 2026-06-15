@@ -11,6 +11,18 @@ export interface NewsletterItem {
 
 export const newslettersData: NewsletterItem[] = [
   {
+    id: 22,
+    title: "YUVABEAT",
+    subtitle: "Six Months of Growth, Learning, and Possibility",
+    month: "June",
+    year: "2026",
+    description:
+      "In this edition of YUVABeat, we invite you to look back on our collective progress and impact so far this year.",
+    imageUrl: "/images/newsletters/news-22.jpg",
+    linkUrl:
+      "https://mailchi.mp/91b3fb3d327d/six-months-of-growth-learning-and-possibility",
+  },
+  {
     id: 21,
     title: "YUVABEAT",
     subtitle: "Reimagining Classrooms Through STEAM",
