@@ -10,6 +10,18 @@ export interface NewsletterItem {
 }
 
 export const newslettersData: NewsletterItem[] = [
+    {
+    id: 23,
+    title: "YUVABEAT",
+    subtitle: "From Learning to New Possibilities",
+    month: "Aug",
+    year: "2026",
+    description:
+      "Every young person follows a different path, but each journey begins with one opportunity.",
+    imageUrl: "/images/newsletters/news-202608.webp",
+    linkUrl:
+      "https://us13.campaign-archive.com/?u=877629c188f9de17e6e6b4bc6&id=eabf107768",
+  },
   {
     id: 22,
     title: "YUVABEAT",
