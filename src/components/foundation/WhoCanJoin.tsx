@@ -15,32 +15,7 @@ export default function WhoCanJoin() {
   return (
     <section className="bg-white py-16 md:py-20">
       <div className="max-w-[1240px] mx-auto px-5 md:px-8 xl:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
-          {/* Image with age badge */}
-          <motion.div
-            className="relative rounded-[24px] overflow-hidden aspect-4/5 border border-[#D9A404]/20 shadow-[0_16px_40px_rgba(0,0,0,0.08)]"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src="/images/foundation/Foundation03.webp"
-              alt="Foundation Programme students working together during a class session"
-              fill
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1C1710]/60 via-transparent to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6">
-              <p className="font-primary text-white text-3xl md:text-4xl font-bold">
-                18&ndash;35
-              </p>
-              <p className="font-secondary text-white/80 text-sm">
-                years old &mdash; that&apos;s the only age requirement
-              </p>
-            </div>
-          </motion.div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
           {/* Audience */}
           <div>
             <motion.div
@@ -85,6 +60,31 @@ export default function WhoCanJoin() {
               ))}
             </div>
           </div>
+
+          {/* Image with age badge */}
+          <motion.div
+            className="relative rounded-[24px] overflow-hidden aspect-4/5 border border-[#D9A404]/20 shadow-[0_16px_40px_rgba(0,0,0,0.08)]"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <Image
+              src="/images/foundation/Foundation03.webp"
+              alt="Foundation Programme students working together during a class session"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1C1710]/60 via-transparent to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <p className="font-primary text-white text-3xl md:text-4xl font-bold">
+                18&ndash;35
+              </p>
+              <p className="font-secondary text-white/80 text-sm">
+                years old &mdash; that&apos;s the only age requirement
+              </p>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
