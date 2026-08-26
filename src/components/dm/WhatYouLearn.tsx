@@ -7,7 +7,7 @@ const learnTopics = [
     description: [
       "SEO & website optimization techniques.",
       "Content marketing, blogging, and copywriting.",
-      "Social media marketing & advertising strategies."
+      "Social media marketing & advertising strategies.",
     ],
   },
   {
@@ -15,7 +15,7 @@ const learnTopics = [
     description: [
       "Google Ads, paid campaigns, and performance tracking.",
       "Email marketing, automation, and customer engagement.",
-      "Growth hacking and conversion optimization."
+      "Growth hacking and conversion optimization.",
     ],
   },
   {
@@ -23,7 +23,7 @@ const learnTopics = [
     description: [
       "Crafting a compelling brand identity.",
       "Engaging storytelling for content marketing.",
-      "Capstone project: Create and launch a real-world campaign."
+      "Capstone project: Create and launch a real-world campaign.",
     ],
   },
 ];
@@ -55,9 +55,11 @@ export default function WhatYouLearn() {
               {topic.title}
             </h3>
 
-            <ul className="list-disc list-inside text-[#140F20] text-sm sm:text-base leading-relaxed">
+            <ul className="list-disc list-outside pl-5 text-[#140F20] text-sm sm:text-base leading-relaxed">
               {topic.description.map((point, idx) => (
-                <li key={idx} className="mt-1">{point}</li>
+                <li key={idx} className="mt-1">
+                  {point}
+                </li>
               ))}
             </ul>
           </motion.div>

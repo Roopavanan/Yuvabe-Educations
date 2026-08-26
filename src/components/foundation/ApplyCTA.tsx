@@ -12,10 +12,10 @@ import {
 } from "lucide-react";
 
 const info = [
-  { icon: CalendarDays, label: "Starts August 22, 2026" },
-  { icon: MapPin, label: "SaraCon, Auroville" },
-  { icon: Sparkles, label: "Free Tuition" },
-  { icon: Users, label: "Limited Seats Available" },
+  { icon: CalendarDays, label: "Starts August 22, 2026", isDate: true },
+  { icon: MapPin, label: "SaraCon, Auroville", isDate: false },
+  { icon: Sparkles, label: "Free Tuition", isDate: false },
+  { icon: Users, label: "Limited Seats Available", isDate: false },
 ];
 
 export default function ApplyCTA() {
@@ -59,10 +59,12 @@ export default function ApplyCTA() {
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {info.map(({ icon: Icon, label }) => (
+          {info.map(({ icon: Icon, label, isDate }) => (
             <span
               key={label}
-              className="font-secondary text-sm text-white/85 flex items-center gap-2"
+              className={`font-secondary text-sm flex items-center gap-2 ${
+                isDate ? "text-[#F2B705] font-bold" : "text-white/85"
+              }`}
             >
               <Icon className="w-4 h-4 text-[#F2B705]" strokeWidth={2.25} />
               {label}

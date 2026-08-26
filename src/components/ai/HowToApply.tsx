@@ -21,7 +21,8 @@ const HowToApply = () => {
 
           {/* Subtext */}
           <p className="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">
-            Limited seats. Cohort forming now for October 2026.
+            Limited seats. Cohort forming now for{" "}
+            <span className="text-[#FFC107] font-bold">October 2026</span>.
           </p>
 
           {/* Button */}

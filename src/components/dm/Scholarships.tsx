@@ -51,7 +51,7 @@ export function CourseFeesAndScholarships() {
             className="relative p-6 bg-[#1f1b2b] rounded-2xl border border-[#FFCA2D]/20 shadow-md"
           >
             {/* Decorative Line */}
-            <div className="absolute top-4 left-6 w-10 h-[3px] bg-white rounded-2xl"></div>
+            {/* <div className="absolute top-4 left-6 w-10 h-[3px] bg-white rounded-2xl"></div> */}
 
             <h3 className="text-lg sm:text-xl font-semibold text-white mb-4">
               {item.title}
@@ -59,7 +59,10 @@ export function CourseFeesAndScholarships() {
 
             <ul className="space-y-2 pl-4">
               {item.points.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm sm:text-base leading-relaxed">
+                <li
+                  key={idx}
+                  className="flex items-start gap-3 text-sm sm:text-base leading-relaxed"
+                >
                   <span className="text-[#FFCA2D] text-lg mt-1">●</span>
                   <span>{point}</span>
                 </li>

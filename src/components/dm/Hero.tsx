@@ -53,9 +53,9 @@ export default function Hero() {
         </h1>
         <p className="mt-4 text-base sm:text-lg md:text-xl font-sans font-semibold">
           A 12-Week Immersive Learning Experience | In-Person Classroom Training
-          | Starts November 2026
+          | Starts <span className="text-[#FFCA2D] font-bold"> November 2026 </span>
         </p>
-        <p className="mt-4 text-sm sm:text-base md:text-lg font-sans font-normal">
+        <p className="mt-6 text-sm sm:text-base md:text-lg font-sans font-normal">
           Master digital marketing with Yuvabe Education’s industry-driven
           Bridge Program. Learn from experts, work on real projects, and develop
           job-ready skills in SEO, social media, content marketing, email

@@ -3,17 +3,23 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const teamMembers = [
+  // {
+  //   id: 1,
+  //   name: "Shalini Kumar",
+  //   role: "Sustainability Lead Facilitator",
+  //   image: "/images/team/shalini.jpg",
+  // },
   {
     id: 1,
-    name: "Shalini Kumar",
+    name: "Rithika",
     role: "Sustainability Lead Facilitator",
-    image: "/images/team/shalini.jpg",
+    image: "/images/team/rithika.jpg",
   },
   {
     id: 3,
     name: "Ashwini Bakshi",
     role: "Inner Growth Facilitator",
-    image: "/images/team/ashwini.jpg",
+    image: "/images/team/ashwini(1).jpg",
   },
   {
     id: 4,
@@ -39,18 +45,18 @@ const teamMembers = [
     role: "Expertise in Soil Science and Agroecology",
     image: "/images/team/anshul.png",
   },
-  {
-    id: 8,
-    name: "Thara Jasmine",
-    role: "Sustainability Content Analyst",
-    image: "/images/team/thara.jpg",
-  },
-  {
-    id: 9,
-    name: "Amila Suman",
-    role: "Sustainability Content Analyst",
-    image: "/images/team/amila.jpeg",
-  },
+  // {
+  //   id: 8,
+  //   name: "Thara Jasmine",
+  //   role: "Sustainability Content Analyst",
+  //   image: "/images/team/thara.jpg",
+  // },
+  // {
+  //   id: 9,
+  //   name: "Amila Suman",
+  //   role: "Sustainability Content Analyst",
+  //   image: "/images/team/amila.jpeg",
+  // },
   {
     id: 10,
     name: "Rahul Palekar",
@@ -63,19 +69,13 @@ const teamMembers = [
     role: "Impact Catalyst ESG Expert",
     image: "/images/team/ujjay.jpg",
   },
-  {
-    id: 12,
-    name: "Rithika",
-    role: "Social Impact Expert",
-    image: "/images/team/rithika.jpg",
-  },
   // { id: 2, name: "Athulya P C", role: "Carbon Accounting Expert", image: "/images/team/athulya.jpeg" },
-  {
-    id: 14,
-    name: "Devana",
-    role: "Impact Catalyst - Team Lead",
-    image: "/images/team/devana.jpg",
-  },
+  // {
+  //   id: 14,
+  //   name: "Devana",
+  //   role: "Impact Catalyst - Team Lead",
+  //   image: "/images/team/devana.jpg",
+  // },
   {
     id: 13,
     name: "Vijai Krishnaraj",
@@ -89,14 +89,14 @@ const TeamSection = () => {
     <section className="py-12 text-center">
       <h2 className="text-[#90C645] text-6xl font-bold mb-8">Our Team</h2>
       <div className="flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="flex flex-wrap justify-center gap-6 max-w-367.75">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative w-[233px] h-[372px] rounded-2xl overflow-hidden shadow-xl"
+              className="relative w-[275px] h-62.5 sm:h-[372px] rounded-2xl overflow-hidden shadow-xl"
             >
               {/* Image Section */}
               <Image

@@ -155,8 +155,8 @@ export default function Hero() {
             variants={heroFadeUp}
             className="font-secondary text-[12px] md:text-[13px] tracking-widest text-[#5B4A25] font-semibold uppercase mt-1"
           >
-            Lunch Provided &middot; Limited to 20 Seats &middot; Starts August
-            22, 2026
+            Lunch Provided &middot; Limited to 20 Seats &middot; Starts{" "}
+            <span className="text-[#B8790A] font-bold">August 22, 2026</span>
           </motion.p>
         </motion.div>
 
@@ -237,7 +237,7 @@ export default function Hero() {
           >
             <Rocket className="w-5 h-5 text-[#B8790A]" />
             <span className="font-secondary text-xs md:text-sm text-[#1C1710] font-semibold">
-              Starts August 22, 2026
+              Starts <span className="text-[#B8790A]">August 22, 2026</span>
             </span>
           </motion.div>
         </motion.div>
