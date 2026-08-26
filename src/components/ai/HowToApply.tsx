@@ -21,11 +21,11 @@ const HowToApply = () => {
 
           {/* Subtext */}
           <p className="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">
-            Registrations close May 3, 2026. Limited seats. Cohort forming now.
+            Limited seats. Cohort forming now for October 2026.
           </p>
 
           {/* Button */}
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex justify-center hidden">
             <Button
               size="lg"
               className="w-full sm:w-auto bg-[#FFC107] text-black font-semibold px-8 py-6 rounded-2xl"

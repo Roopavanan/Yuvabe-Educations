@@ -160,7 +160,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
           className="mt-4 text-base sm:text-lg md:text-xl"
         >
-          Launching September 2025 | Empowering Change for a Sustainable Future
+          Launching September 2026 | Empowering Change for a Sustainable Future
         </motion.p>
 
         {/* Buttons */}
@@ -177,7 +177,7 @@ export default function Home() {
                 href={"https://forms.gle/kXTTjSCYvBMRNa7z9"}
                 target="_blank"
               >
-                <button className="px-6 py-3 bg-[#90C645] text-white rounded-full font-semibold   w-full sm:w-[230px] cursor-pointer">
+                <button className="hidden px-6 py-3 bg-[#90C645] text-white rounded-full font-semibold   w-full sm:w-[230px] cursor-pointer">
                   APPLY NOW
                 </button>
               </Link>
@@ -185,7 +185,7 @@ export default function Home() {
                 href={"/docs/yuvabe Sustainability Brochure.pdf"}
                 target="_blank"
               >
-                <button className="px-6 py-3 border border-[#90C645] text-[#90C645] rounded-full font-semibold  w-full sm:w-auto cursor-pointer">
+                <button className="hidden px-6 py-3 border border-[#90C645] text-[#90C645] rounded-full font-semibold  w-full sm:w-auto cursor-pointer">
                   DOWNLOAD BROCHURE
                 </button>
               </Link>
@@ -403,7 +403,7 @@ export default function Home() {
                 href={"https://forms.gle/kXTTjSCYvBMRNa7z9"}
                 target="_blank"
               >
-                <button className="px-6 py-3 bg-[#90C645] text-white rounded-full font-semibold   w-full sm:w-[230px] cursor-pointer">
+                <button className="hidden px-6 py-3 bg-[#90C645] text-white rounded-full font-semibold   w-full sm:w-[230px] cursor-pointer">
                   APPLY NOW
                 </button>
               </Link>
@@ -411,7 +411,7 @@ export default function Home() {
                 href={"/docs/yuvabe Sustainability Brochure.pdf"}
                 target="_blank"
               >
-                <button className="px-6 py-3 border border-[#90C645] text-[#90C645] rounded-full font-semibold  w-full sm:w-auto cursor-pointer">
+                <button className="hidden px-6 py-3 border border-[#90C645] text-[#90C645] rounded-full font-semibold  w-full sm:w-auto cursor-pointer">
                   DOWNLOAD BROCHURE
                 </button>
               </Link>
@@ -437,7 +437,7 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <Calendar className="text-[#90C645] w-8 h-8" />
               <p className="mt-2 font-semibold">Duration</p>
-              <p className="text-sm">From September 2025 onwards</p>
+              <p className="text-sm">From September 2026 onwards</p>
             </div>
 
             {/* Schedule */}
@@ -648,7 +648,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <strong>Online Application:</strong> Complete the application form
-            before September 15, 2025.
+            before September 15, 2026.
           </motion.div>
 
           {/* Plus Icon */}
@@ -694,11 +694,10 @@ export default function Home() {
           </motion.div>
         </div>
 
-       
         {/* Apply Now Button */}
         <Link href={"https://forms.gle/kXTTjSCYvBMRNa7z9"} target="_blank">
           <motion.button
-            className="mt-4 bg-[#79A441] text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-[#6D923A] transition-all cursor-pointer"
+            className="hidden mt-4 bg-[#79A441] text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-[#6D923A] transition-all cursor-pointer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.5 }}
@@ -784,18 +783,18 @@ export default function Home() {
             Get Started
           </motion.h2>
           <motion.p
-            className="text-[#90C645] text-md mb-6"
+            className="text-[#90C645] text-md"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
             Take the first step toward your career in Corporate Sustainability.
             <br />
-            Register today and secure your spot!
+            <span className="hidden">Register today and secure your spot!</span>
           </motion.p>
           <div className="flex justify-center gap-4">
             {/* Centered Button */}
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center mt-6 hidden">
               <div className="mt-2">
                 <motion.div
                   initial={{ opacity: 0 }}

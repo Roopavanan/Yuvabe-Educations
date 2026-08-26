@@ -86,7 +86,7 @@ export function EnrollmentProcess() {
             href="https://docs.google.com/forms/d/e/1FAIpQLSfJDp1CsV4wBiD0MJ6oOiJqjZgyNzITEwFiRhxPDRl3m5ghtQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#FFCA2D] text-black px-6 md:px-8 py-2 rounded-2xl font-semibold hover:bg-yellow-500 transition text-center"
+            className="hidden bg-[#FFCA2D] text-black px-6 md:px-8 py-2 rounded-2xl font-semibold hover:bg-yellow-500 transition text-center"
           >
             Apply Now
           </Link>
@@ -95,7 +95,7 @@ export function EnrollmentProcess() {
             href="/docs/DM Brochure.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="border border-[#E8AC35] text-[#FFCA2D] px-6 md:px-8 py-2 rounded-2xl font-semibold hover:bg-yellow-400 hover:text-black transition text-center"
+            className="hidden border border-[#E8AC35] text-[#FFCA2D] px-6 md:px-8 py-2 rounded-2xl font-semibold hover:bg-yellow-400 hover:text-black transition text-center"
           >
             Download Brochure
           </Link>

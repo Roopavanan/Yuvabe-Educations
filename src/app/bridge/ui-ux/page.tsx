@@ -35,7 +35,6 @@ const heroFadeUp: Variants = {
   },
 };
 
-
 export default function uiux() {
   return (
     <>
@@ -122,7 +121,7 @@ export default function uiux() {
 
             {/* CTA */}
             <motion.div variants={heroFadeUp}>
-              <Link href="/bridge/ui-ux/registrationform">
+              <Link href="/bridge/ui-ux/registrationform" className="hidden">
                 <motion.span
                   className="inline-flex items-center gap-2 font-secondary text-sm md:text-base text-white font-semibold px-7 py-3 rounded-full cursor-pointer bg-[#C94B24]"
                   whileHover={{ scale: 1.05, backgroundColor: "#b84320" }}
@@ -139,7 +138,7 @@ export default function uiux() {
               variants={heroFadeUp}
               className="font-secondary text-[12px] md:text-[11px] tracking-[0.18em] text-[#F8F3EB]/60 uppercase"
             >
-              No prior experience required &middot; Starts June 8, 2026
+              No prior experience required &middot; Starts October 2026
             </motion.p>
           </motion.div>
         </div>
@@ -797,10 +796,10 @@ export default function uiux() {
                 label: "Location",
                 value: "Saracon Campus, Yuvabe, Auroville, Tamil Nadu",
               },
-              { label: "Starts", value: "June 8, 2026" },
+              { label: "Starts", value: "October 2026" },
               {
                 label: "Applications close",
-                value: "May 30, 2026 · Filling fast",
+                value: "TBD",
               },
               { label: "Programme fee", value: "₹0 tuition" },
               {
@@ -1292,7 +1291,7 @@ export default function uiux() {
           {/* CTA */}
           <motion.a
             href="/bridge/ui-ux/registrationform"
-            className="bg-[#F26622] text-white font-primary font-semibold text-base px-9 py-4 rounded-full hover:bg-[#d9551a] transition-colors"
+            className="hidden bg-[#F26622] text-white font-primary font-semibold text-base px-9 py-4 rounded-full hover:bg-[#d9551a] transition-colors"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
@@ -1336,7 +1335,8 @@ export default function uiux() {
 
           {/* Subtext */}
           <p className="text-white/70 text-sm md:text-xl">
-            Applications close May 30, 2026 · Limited seats · Cohort forming now
+            Applications close September 2026 · Limited seats · Cohort forming
+            now
           </p>
 
           {/* Buttons */}
@@ -1344,7 +1344,7 @@ export default function uiux() {
             <Link
               href="/bridge/ui-ux/registrationform"
               target="_blank"
-              className="bg-[#F26622] text-white px-7 py-3 rounded-full font-semibold hover:bg-[#d9551c] transition text-center"
+              className="hidden bg-[#F26622] text-white px-7 py-3 rounded-full font-semibold hover:bg-[#d9551c] transition text-center"
             >
               Apply Now →
             </Link>

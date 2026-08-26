@@ -58,12 +58,12 @@ export function StudentTestimonial() {
           Take the first step toward your career in Digital Marketing. <br />
           Register today and secure your spot!
         </p>
-        <div className="flex flex-col md:flex-row gap-4 sm:gap-6 justify-center mt-6">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-6 justify-center mt-6 hidden">
           <button
             onClick={() =>
               window.open(
                 "https://docs.google.com/forms/d/e/1FAIpQLSfJDp1CsV4wBiD0MJ6oOiJqjZgyNzITEwFiRhxPDRl3m5ghtQ/viewform",
-                "_blank"
+                "_blank",
               )
             }
             className="bg-[#FFCA2D] text-black text-sm px-5 md:px-6 py-2 rounded-2xl font-semibold hover:bg-yellow-500 transition cursor-pointer"

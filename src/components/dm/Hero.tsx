@@ -53,7 +53,7 @@ export default function Hero() {
         </h1>
         <p className="mt-4 text-base sm:text-lg md:text-xl font-sans font-semibold">
           A 12-Week Immersive Learning Experience | In-Person Classroom Training
-          | Starts March 24, 2025
+          | Starts November 2026
         </p>
         <p className="mt-4 text-sm sm:text-base md:text-lg font-sans font-normal">
           Master digital marketing with Yuvabe Education’s industry-driven
@@ -63,7 +63,7 @@ export default function Hero() {
         </p>
         {/* CTA Buttons */}
 
-        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6 sm:gap-8">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center gap-6 sm:gap-8 hidden">
           <Link
             href="https://docs.google.com/forms/d/e/1FAIpQLSfJDp1CsV4wBiD0MJ6oOiJqjZgyNzITEwFiRhxPDRl3m5ghtQ/viewform"
             target="_blank"

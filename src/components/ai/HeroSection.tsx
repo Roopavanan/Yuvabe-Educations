@@ -109,7 +109,7 @@ export function HeroSection() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
               <Button
                 size="lg"
-                className="bg-[#FFC107] text-black hover:bg-yellow-500 font-bold px-8 py-6 rounded-full text-sm tracking-wide shadow-lg hover:shadow-yellow-500/30 transition-all"
+                className="hidden bg-[#FFC107] text-black hover:bg-yellow-500 font-bold px-8 py-6 rounded-full text-sm tracking-wide shadow-lg hover:shadow-yellow-500/30 transition-all"
                 onClick={() =>
                   window.open(
                     "https://yuvabeeducation.com/bridge/ai/register",
