@@ -4,12 +4,12 @@ import Image from "next/image";
 
 const KeyHighlights = () => {
   const highlights = [
-    "In-person sessions with industry experts.",
-    "Immersive learning in Auroville's unique, sustainable ecosystem.",
+    "Live, interactive online sessions with industry experts.",
+    "Learn key frameworks in GHG accounting, ESG, and CSR from anywhere.",
     "Hands-on projects and real-world case studies.",
-    "Paid (3-6 months) Internships with Yuvabe for the top performing students of the course.",
+    "Access to Yuvabe's alumni network and future learning opportunities.",
     "Certification recognized by universities and employers.",
-    "Affordable and inclusive, with scholarships available.",
+    "Completely free, with easy online registration.",
   ];
 
   return (

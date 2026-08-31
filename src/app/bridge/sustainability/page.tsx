@@ -10,7 +10,6 @@ import {
   MapPin,
   GraduationCap,
   Briefcase,
-  Building,
   Users,
   CheckCircle,
 } from "lucide-react";
@@ -23,23 +22,21 @@ import FooterSus from "@/components/FooterSus";
 const audience = [
   {
     icon: <GraduationCap className="w-8 h-8 text-[#A0E75A]" />,
-    title: "Students and Recent Graduates",
-    description: "Eager to build a career in sustainability.",
+    title: "Students",
+    description:
+      "Studying Environmental Science, Ecology, Environmental Engineering, or related disciplines.",
   },
   {
     icon: <Briefcase className="w-8 h-8 text-[#A0E75A]" />,
-    title: "Aspiring Professionals",
-    description: "Transitioning to sustainability careers and roles.",
-  },
-  {
-    icon: <Building className="w-8 h-8 text-[#A0E75A]" />,
-    title: "Corporate Leaders",
-    description: "Integrating sustainability into business strategies.",
+    title: "Graduates",
+    description:
+      "Recent graduates from Environmental Science, Ecology, Environmental Engineering, or related fields.",
   },
   {
     icon: <Users className="w-8 h-8 text-[#A0E75A]" />,
-    title: "Passionate Changemakers",
-    description: "About creating a positive environmental and social impact.",
+    title: "Early-Career Professionals",
+    description:
+      "Early in their careers and looking to build practical sustainability skills.",
   },
 ];
 
@@ -67,23 +64,27 @@ const features = [
 const learnings = [
   {
     number: "01",
-    text: "Develop your sustainability skills with our comprehensive course. Learn key concepts, global trends, and best practices.",
+    text: "Sustainability fundamentals.",
   },
   {
     number: "02",
-    text: "Understand GHG accounting, ESG frameworks, and reporting to make informed decisions.",
+    text: "GHG accounting & carbon management.",
   },
   {
     number: "03",
-    text: "Apply circular economy principles to reduce waste and drive innovation.",
+    text: "CSR & corporate responsibility.",
   },
   {
     number: "04",
-    text: "Develop skills to design, implement, and evaluate impactful projects.",
+    text: "ESG frameworks & reporting.",
   },
   {
     number: "05",
-    text: "Communicate solutions effectively to diverse stakeholders.",
+    text: "Social impact & SROI.",
+  },
+  {
+    number: "06",
+    text: "Climate risk assessment.",
   },
 ];
 
@@ -148,10 +149,10 @@ export default function Home() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold max-w-3xl"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold max-w-4xl leading-tight"
         >
-          Shape your career in Corporate Sustainability with Yuvabe Education’s
-          Bridge Program.
+          Corporate Sustainability: <br />
+          From Foundations to Practical Application with Yuvabe Education.
         </motion.h1>
 
         <motion.p
@@ -160,23 +161,27 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
           className="mt-4 text-base sm:text-lg md:text-xl"
         >
-          Launching{" "}
-          <span className="text-[#A0E75A] font-bold">September 2026</span> |
-          Empowering Change for a Sustainable Future
+          <span className="text-[#A0E75A] font-bold">
+            Free &middot; Online &middot; 6 Weeks
+          </span>{" "}
+          | Starts{" "}
+          <span className="text-[#A0E75A] font-bold">11 September 2026</span>
         </motion.p>
 
         {/* Buttons */}
         {/* Centered Button */}
-        <div className="flex justify-center mt-6 hidden">
-          <div className="mt-2">
+        <div className="flex justify-center mt-6">
+          <div>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="mt-6 flex flex-col sm:flex-row gap-6"
+              className="flex flex-col sm:flex-row gap-6"
             >
               <Link
-                href={"https://forms.gle/kXTTjSCYvBMRNa7z9"}
+                href={
+                  "https://docs.google.com/forms/d/e/1FAIpQLScQtkLjsuVSA1do7dfHuenXKLs78FWFP5nmxOfdMI5kiyfURg/viewform?pli=1"
+                }
                 target="_blank"
               >
                 <button className="px-6 py-3 bg-[#90C645] text-white rounded-full font-semibold   w-full sm:w-[230px] cursor-pointer">
@@ -186,6 +191,7 @@ export default function Home() {
               <Link
                 href={"/docs/yuvabe Sustainability Brochure.pdf"}
                 target="_blank"
+                className="hidden"
               >
                 <button className="px-6 py-3 border border-[#90C645] text-[#90C645] rounded-full font-semibold  w-full sm:w-auto cursor-pointer">
                   DOWNLOAD BROCHURE
@@ -211,8 +217,8 @@ export default function Home() {
           </h2>
           <p className="mt-4 text-sm sm:text-base md:text-lg leading-relaxed">
             Unlock a comprehensive understanding of sustainability with our
-            3-month, in-person 'Corporate Sustainability' course at Auroville,
-            Tamil Nadu.
+            free, online 'Corporate Sustainability' course &mdash; 6 weeks,
+            every Friday and Saturday, join from anywhere with no fee.
           </p>
         </motion.div>
 
@@ -224,7 +230,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          9 Immersive Modules
+          Moving From Concepts to Practice
         </motion.h2>
 
         <motion.p
@@ -234,9 +240,10 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          Join us at Yuvabe, Auroville, where innovation meets sustainability,
+          Join us online from anywhere, where innovation meets sustainability,
           and gain the skills, knowledge, and network to drive a positive impact
-          in your career and beyond.
+          in your career and beyond through data, frameworks, analysis, and
+          communication.
         </motion.p>
 
         {/* Slider */}
@@ -345,11 +352,12 @@ export default function Home() {
           transition={{ duration: 1, delay: 0.3 }}
           className="mt-2 text-lg md:text-xl text-gray-300 text-center"
         >
-          At the end of this course, you'll be able to
+          Moving from concepts to practice through data, frameworks, analysis
+          and communication.
         </motion.p>
 
         {/* Learning Outcomes Grid */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="mt-10 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {learnings.map((item, index) => (
             <motion.div
               key={index}
@@ -393,7 +401,7 @@ export default function Home() {
         </motion.p>
 
         {/* Centered Button */}
-        <div className="flex justify-center mt-6 hidden">
+        <div className="flex justify-center mt-6">
           <div className="mt-2">
             <motion.div
               initial={{ opacity: 0 }}
@@ -402,7 +410,9 @@ export default function Home() {
               className="mt-6 flex flex-col sm:flex-row gap-6"
             >
               <Link
-                href={"https://forms.gle/kXTTjSCYvBMRNa7z9"}
+                href={
+                  "https://docs.google.com/forms/d/e/1FAIpQLScQtkLjsuVSA1do7dfHuenXKLs78FWFP5nmxOfdMI5kiyfURg/viewform?pli=1"
+                }
                 target="_blank"
               >
                 <button className="px-6 py-3 bg-[#90C645] text-white rounded-full font-semibold   w-full sm:w-[230px] cursor-pointer">
@@ -412,6 +422,7 @@ export default function Home() {
               <Link
                 href={"/docs/yuvabe Sustainability Brochure.pdf"}
                 target="_blank"
+                className="hidden"
               >
                 <button className="px-6 py-3 border border-[#90C645] text-[#90C645] rounded-full font-semibold  w-full sm:w-auto cursor-pointer">
                   DOWNLOAD BROCHURE
@@ -440,9 +451,10 @@ export default function Home() {
               <Calendar className="text-[#3F6B12] w-8 h-8" />
               <p className="mt-2 font-semibold">Duration</p>
               <p className="text-sm">
-                From{" "}
-                <span className="font-bold text-[#3F6B12]">September 2026</span>{" "}
-                onwards
+                6 weeks &middot; Starts{" "}
+                <span className="font-bold text-[#3F6B12]">
+                  11 September 2026
+                </span>
               </p>
             </div>
 
@@ -450,14 +462,14 @@ export default function Home() {
             <div className="flex flex-col items-center border-l border-[#3F6B12] pl-6">
               <Clock className="text-[#3F6B12] w-8 h-8" />
               <p className="mt-2 font-semibold">Schedule</p>
-              <p className="text-sm">Monday to Friday, 9:00 AM - 5:00 PM.</p>
+              <p className="text-sm">Friday & Saturday, 4:00 – 5:30 PM.</p>
             </div>
 
             {/* Mode */}
             <div className="flex flex-col items-center border-l border-[#3F6B12] pl-6">
               <MapPin className="text-[#3F6B12] w-8 h-8" />
               <p className="mt-2 font-semibold">Mode</p>
-              <p className="text-sm">In-Person at Yuvabe Saracon Campus.</p>
+              <p className="text-sm">Online &middot; Join from anywhere.</p>
             </div>
           </div>
         </motion.div>
@@ -491,7 +503,7 @@ export default function Home() {
           </p>
 
           {/* Responsive Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10 place-items-center">
+          <div className="flex flex-wrap justify-center gap-6 mt-10">
             {audience.map((item, index) => (
               <motion.div
                 key={index}
@@ -499,7 +511,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                className="flex flex-col items-start gap-3 p-5 sm:p-6 bg-[#92d82f38] bg-opacity-15 backdrop-blur-md border border-[#90C645] rounded-2xl shadow-lg text-left text-white w-full max-w-sm"
+                className="flex flex-col items-center gap-3 p-5 sm:p-6 bg-[#92d82f38] bg-opacity-15 backdrop-blur-md border border-[#90C645] rounded-2xl shadow-lg text-center text-white w-full max-w-sm"
               >
                 <span className="text-3xl">{item.icon}</span>
                 <h3 className="text-base sm:text-lg font-semibold">
@@ -605,18 +617,24 @@ export default function Home() {
               <strong>Course fee:</strong> Completely Free
             </p>
             <p>
-              <strong>Refundable Deposit:</strong> ₹3,500 (Paid at time of
-              enrollment , will be refunded after course completion)
+              <strong>Registration:</strong> Free &mdash; no deposit required.
             </p>
           </div>
 
           {/* Payment Options Card (Full Width) */}
           <div className="bg-[#92d82f38] bg-opacity-15 backdrop-blur-lg border border-[#90C645] rounded-2xl p-6 ">
-            <h3 className="text-lg font-bold text-[#A1D06E]">
-              Payment Options
-            </h3>
+            <h3 className="text-lg font-bold text-[#A1D06E]">Registration</h3>
             <p>
-              <strong>Payment Options:</strong> Cash, UPI, Bank Transfer.
+              <strong>How to Apply:</strong>{" "}
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLScQtkLjsuVSA1do7dfHuenXKLs78FWFP5nmxOfdMI5kiyfURg/viewform?pli=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#A1D06E] underline"
+              >
+                Apply Online
+              </a>
+              .
             </p>
             <p>
               <strong>Contact:</strong> Email at{" "}
@@ -655,7 +673,7 @@ export default function Home() {
           >
             <strong>Online Application:</strong> Complete the application form
             before{" "}
-            <span className="font-bold text-[#3F6B12]">September 2026</span>.
+            <span className="font-bold text-[#3F6B12]">11 September 2026</span>.
           </motion.div>
 
           {/* Plus Icon */}
@@ -676,7 +694,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <strong>Screening:</strong> Shortlisted candidates will be notified
-            and will have to come in for an interview and aptitude test.
+            and invited for an online interview and aptitude test.
           </motion.div>
 
           {/* Plus Icon */}
@@ -696,15 +714,20 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
           >
-            <strong>Confirmation:</strong> Secure your spot by paying the
-            deposit amount after you clear your screening.
+            <strong>Confirmation:</strong> Secure your spot by completing your
+            free registration after you clear the screening.
           </motion.div>
         </div>
 
         {/* Apply Now Button */}
-        <Link href={"https://forms.gle/kXTTjSCYvBMRNa7z9"} target="_blank">
+        <Link
+          href={
+            "https://docs.google.com/forms/d/e/1FAIpQLScQtkLjsuVSA1do7dfHuenXKLs78FWFP5nmxOfdMI5kiyfURg/viewform?pli=1"
+          }
+          target="_blank"
+        >
           <motion.button
-            className="hidden mt-4 bg-[#79A441] text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-[#6D923A] transition-all cursor-pointer"
+            className="mt-4 bg-[#79A441] text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-[#6D923A] transition-all cursor-pointer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 1.5 }}
@@ -795,13 +818,14 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-            Take the first step toward your career in Corporate Sustainability.
+            Build practical sustainability skills with a free online course by
+            Yuvabe Education.
             <br />
             <span className="hidden">Register today and secure your spot!</span>
           </motion.p>
           <div className="flex justify-center gap-4">
             {/* Centered Button */}
-            <div className="flex justify-center mt-6 hidden">
+            <div className="flex justify-center mt-6">
               <div className="mt-2">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -810,7 +834,9 @@ export default function Home() {
                   className="mt-6 flex flex-col sm:flex-row gap-6"
                 >
                   <Link
-                    href={"https://forms.gle/kXTTjSCYvBMRNa7z9"}
+                    href={
+                      "https://docs.google.com/forms/d/e/1FAIpQLScQtkLjsuVSA1do7dfHuenXKLs78FWFP5nmxOfdMI5kiyfURg/viewform?pli=1"
+                    }
                     target="_blank"
                   >
                     <button className="px-6 py-3 bg-[#90C645] text-white rounded-full font-semibold   w-full sm:w-[230px] cursor-pointer">
@@ -820,6 +846,7 @@ export default function Home() {
                   <Link
                     href={"/docs/yuvabe Sustainability Brochure.pdf"}
                     target="_blank"
+                    className="hidden"
                   >
                     <button className="px-6 py-3 border border-[#90C645] text-[#90C645] rounded-full font-semibold  w-full sm:w-auto cursor-pointer">
                       DOWNLOAD BROCHURE
