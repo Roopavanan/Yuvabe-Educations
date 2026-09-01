@@ -22,7 +22,13 @@ const HowToApply = () => {
           {/* Subtext */}
           <p className="mt-4 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">
             Limited seats. Cohort forming now for{" "}
-            <span className="text-[#FFC107] font-bold">October 2026</span>.
+            <span className="text-[#FFC107] font-bold">05 October 2026</span>.
+          </p>
+
+          {/* Last Date to Apply */}
+          <p className="mt-3 text-sm sm:text-base md:text-lg text-white/80 max-w-2xl mx-auto">
+            Last Date to Apply:{" "}
+            <span className="text-[#FFC107] font-bold">28 September 2026</span>
           </p>
 
           {/* Button */}

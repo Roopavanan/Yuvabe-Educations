@@ -93,7 +93,7 @@ export default function uiux() {
               className="font-secondary text-white text-lg md:text-2xl font-medium"
             >
               12 weeks &middot; In-person &middot; Auroville &middot;{" "}
-              <span className="text-[#C94B24] font-bold">October 2026</span>
+              <span className="text-[#C94B24] font-bold">02 Nov 2026</span>
             </motion.p>
 
             {/* Description */}
@@ -140,7 +140,7 @@ export default function uiux() {
               className="font-secondary text-[12px] md:text-[11px] tracking-[0.18em] text-[#F8F3EB]/60 uppercase"
             >
               No prior experience required &middot; Starts{" "}
-              <span className="text-[#C94B24]">October 2026</span>
+              <span className="text-[#C94B24]">02 Nov 2026</span>
             </motion.p>
           </motion.div>
         </div>
@@ -798,7 +798,7 @@ export default function uiux() {
                 label: "Location",
                 value: "Saracon Campus, Yuvabe, Auroville, Tamil Nadu",
               },
-              { label: "Starts", value: "October 2026" },
+              { label: "Starts", value: "02 Nov 2026" },
               {
                 label: "Applications close",
                 value: "TBD",
@@ -1342,7 +1342,7 @@ export default function uiux() {
           {/* Subtext */}
           <p className="text-white/70 text-sm md:text-xl">
             Applications close{" "}
-            <span className="text-[#F26622] font-bold">September 2026</span> ·
+            <span className="text-[#F26622] font-bold">26 October 2026</span> ·
             Limited seats · Cohort forming now
           </p>
 

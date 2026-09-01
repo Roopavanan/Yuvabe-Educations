@@ -673,7 +673,7 @@ export default function Home() {
           >
             <strong>Online Application:</strong> Complete the application form
             before{" "}
-            <span className="font-bold text-[#3F6B12]">11 September 2026</span>.
+            <span className="font-bold text-[#3F6B12]">07 September 2026</span>.
           </motion.div>
 
           {/* Plus Icon */}
@@ -826,12 +826,12 @@ export default function Home() {
           <div className="flex justify-center gap-4">
             {/* Centered Button */}
             <div className="flex justify-center mt-6">
-              <div className="mt-2">
+              <div>
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 0.6 }}
-                  className="mt-6 flex flex-col sm:flex-row gap-6"
+                  className="flex flex-col sm:flex-row gap-6"
                 >
                   <Link
                     href={

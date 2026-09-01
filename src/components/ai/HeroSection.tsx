@@ -105,7 +105,7 @@ export function HeroSection() {
             <br />
             <br />
             Limited seats. Cohort forming now for{" "}
-            <span className="text-[#FFC107] font-bold">October 2026</span>.
+            <span className="text-[#FFC107] font-bold">05 October 2026</span>.
           </motion.p>
 
           {/* Buttons */}
