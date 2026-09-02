@@ -6,16 +6,21 @@ import {
   CalendarDays,
   MapPin,
   Sparkles,
-  Users,
   Mail,
   Phone,
 } from "lucide-react";
 
 const info = [
-  { icon: CalendarDays, label: "Starts August 22, 2026", isDate: true },
+  { icon: CalendarDays, label: "Starts 10 October 2026", isDate: true },
+  { icon: CalendarDays, label: "Last Date to Apply 5 October 2026", isDate: true },
   { icon: MapPin, label: "SaraCon, Auroville", isDate: false },
   { icon: Sparkles, label: "Free Tuition", isDate: false },
-  { icon: Users, label: "Limited Seats Available", isDate: false },
+  {
+    icon: Phone,
+    label: "+91 96776 04467",
+    isDate: false,
+    href: "tel:+919677604467",
+  },
 ];
 
 export default function ApplyCTA() {
@@ -59,17 +64,27 @@ export default function ApplyCTA() {
           transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          {info.map(({ icon: Icon, label, isDate }) => (
-            <span
-              key={label}
-              className={`font-secondary text-sm flex items-center gap-2 ${
-                isDate ? "text-[#F2B705] font-bold" : "text-white/85"
-              }`}
-            >
-              <Icon className="w-4 h-4 text-[#F2B705]" strokeWidth={2.25} />
-              {label}
-            </span>
-          ))}
+          {info.map(({ icon: Icon, label, isDate, href }) => {
+            const content = (
+              <>
+                <Icon className="w-4 h-4 text-[#F2B705]" strokeWidth={2.25} />
+                {label}
+              </>
+            );
+            const className = `font-secondary text-sm flex items-center gap-2 ${
+              isDate ? "text-[#F2B705] font-bold" : "text-white/85"
+            } ${href ? "underline underline-offset-2 hover:text-[#F2B705] transition-colors" : ""}`;
+
+            return href ? (
+              <a key={label} href={href} className={className}>
+                {content}
+              </a>
+            ) : (
+              <span key={label} className={className}>
+                {content}
+              </span>
+            );
+          })}
         </motion.div>
 
         {/* CTA buttons */}
@@ -80,24 +95,24 @@ export default function ApplyCTA() {
           transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <Link href="mailto:bridge@yuvabe.com?subject=Foundation%20Programme">
+          <Link href="https://forms.gle/viL33Gq1kCyfNtaN6" target="_blank">
             <motion.span
               className="inline-flex items-center gap-2 font-secondary text-sm md:text-base text-[#1C1710] font-semibold px-8 py-3.5 rounded-full cursor-pointer bg-[#F2B705] shadow-[0_8px_24px_rgba(242,183,5,0.25)]"
               whileHover={{ scale: 1.05, backgroundColor: "#E2711D" }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 340, damping: 22 }}
             >
-              <Mail className="w-4 h-4" /> Email Us
+              Apply Now →
             </motion.span>
           </Link>
-          <Link href="tel:+919677604467">
+          <Link href="mailto:bridge@yuvabe.com?subject=Foundation%20Programme">
             <motion.span
               className="inline-flex items-center gap-2 font-secondary text-sm md:text-base text-white font-semibold px-8 py-3.5 rounded-full cursor-pointer border border-white/25"
               whileHover={{ scale: 1.05, borderColor: "#F2B705" }}
               whileTap={{ scale: 0.97 }}
               transition={{ type: "spring", stiffness: 340, damping: 22 }}
             >
-              <Phone className="w-4 h-4" /> +91 96776 04467
+              <Mail className="w-4 h-4" /> Email Us
             </motion.span>
           </Link>
         </motion.div>

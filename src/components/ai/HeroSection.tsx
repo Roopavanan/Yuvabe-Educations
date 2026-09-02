@@ -106,6 +106,11 @@ export function HeroSection() {
             <br />
             Limited seats. Cohort forming now for{" "}
             <span className="text-[#FFC107] font-bold">05 October 2026</span>.
+            <br />
+            Last Date to Apply:{" "}
+            <span className="text-[#FFC107] font-bold">
+              28 September 2026
+            </span>
           </motion.p>
 
           {/* Buttons */}
@@ -113,10 +118,10 @@ export function HeroSection() {
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
               <Button
                 size="lg"
-                className="hidden bg-[#FFC107] text-black hover:bg-yellow-500 font-bold px-8 py-6 rounded-full text-sm tracking-wide shadow-lg hover:shadow-yellow-500/30 transition-all"
+                className="bg-[#FFC107] text-black hover:bg-yellow-500 font-bold px-8 py-6 rounded-full text-sm tracking-wide shadow-lg hover:shadow-yellow-500/30 transition-all"
                 onClick={() =>
                   window.open(
-                    "https://yuvabeeducation.com/bridge/ai/register",
+                    "https://forms.gle/sLf4qwVSPSpVmCrm7",
                     "_blank",
                   )
                 }

@@ -10,7 +10,7 @@ import ApplyCTA from "@/components/foundation/ApplyCTA";
 export const metadata: Metadata = {
   title: "Foundation Programme | Yuvabe Education",
   description:
-    "A free 6-week learning journey helping young adults build essential life, communication, digital, and career skills. Every Saturday at SaraCon, Auroville. Starts August 22, 2026.",
+    "A free 6-week learning journey helping young adults build essential life, communication, digital, and career skills. Every Saturday at SaraCon, Auroville. Starts 10 October 2026.",
 };
 
 export default function FoundationProgramme() {

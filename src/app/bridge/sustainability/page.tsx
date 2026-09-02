@@ -159,13 +159,16 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="mt-4 text-base sm:text-lg md:text-xl"
+          className="mt-4 text-base sm:text-lg md:text-xl leading-normal"
         >
           <span className="text-[#A0E75A] font-bold">
             Free &middot; Online &middot; 6 Weeks
           </span>{" "}
           | Starts{" "}
           <span className="text-[#A0E75A] font-bold">11 September 2026</span>
+          <br />
+          Last Date to Apply:{" "}
+          <span className="text-[#A0E75A] font-bold">07 September 2026</span>
         </motion.p>
 
         {/* Buttons */}
@@ -820,6 +823,10 @@ export default function Home() {
           >
             Build practical sustainability skills with a free online course by
             Yuvabe Education.
+            <br />
+            Starts <span className="text-[#3F6B12] font-bold">11 September 2026</span>
+            &nbsp;&nbsp;&middot;&nbsp;&nbsp;Last Date to Apply{" "}
+            <span className="text-[#3F6B12] font-bold">07 September 2026</span>
             <br />
             <span className="hidden">Register today and secure your spot!</span>
           </motion.p>

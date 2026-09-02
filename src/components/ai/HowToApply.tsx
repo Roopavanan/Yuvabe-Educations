@@ -32,13 +32,13 @@ const HowToApply = () => {
           </p>
 
           {/* Button */}
-          <div className="mt-8 flex justify-center hidden">
+          <div className="mt-8 flex justify-center">
             <Button
               size="lg"
               className="w-full sm:w-auto bg-[#FFC107] text-black font-semibold px-8 py-6 rounded-2xl"
               onClick={() =>
                 window.open(
-                  "https://yuvabeeducation.com/bridge/ai/register",
+                  "https://forms.gle/sLf4qwVSPSpVmCrm7",
                   "_blank",
                 )
               }

@@ -124,23 +124,18 @@ export default function Hero() {
               scroll={false}
             >
               <motion.span
-                className="inline-flex items-center gap-2 font-secondary text-sm md:text-base text-[#1C1710] font-semibold px-7 py-3 rounded-full cursor-pointer bg-[#F2B705] shadow-[0_8px_24px_rgba(217,164,4,0.35)]"
-                whileHover={{ scale: 1.05, backgroundColor: "#E2711D" }}
+                className="inline-flex items-center gap-2 font-secondary text-sm md:text-base text-[#1C1710] font-semibold px-7 py-3 rounded-full cursor-pointer border border-[#D9A404]/50 bg-white/40"
+                whileHover={{ scale: 1.05, borderColor: "#D9A404" }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 340, damping: 22 }}
               >
                 View Curriculum
               </motion.span>
             </Link>
-            <Link
-              href="#apply"
-              className="hidden"
-              onClick={scrollToId("apply")}
-              scroll={false}
-            >
+            <Link href="https://forms.gle/viL33Gq1kCyfNtaN6" target="_blank">
               <motion.span
-                className="inline-flex items-center gap-2 font-secondary text-sm md:text-base text-[#1C1710] font-semibold px-7 py-3 rounded-full cursor-pointer border border-[#D9A404]/50 bg-white/40"
-                whileHover={{ scale: 1.05, borderColor: "#D9A404" }}
+                className="inline-flex items-center gap-2 font-secondary text-sm md:text-base text-[#1C1710] font-semibold px-7 py-3 rounded-full cursor-pointer bg-[#F2B705] shadow-[0_8px_24px_rgba(217,164,4,0.35)]"
+                whileHover={{ scale: 1.05, backgroundColor: "#E2711D" }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 340, damping: 22 }}
               >
@@ -156,7 +151,10 @@ export default function Hero() {
             className="font-secondary text-[12px] md:text-[13px] tracking-widest text-[#5B4A25] font-semibold uppercase mt-1"
           >
             Lunch Provided &middot; Limited to 20 Seats &middot; Starts{" "}
-            <span className="text-[#B8790A] font-bold">August 22, 2026</span>
+            <span className="text-[#B8790A] font-bold">10 October 2026</span>{" "}
+            <br />
+            &middot; Last Date to Apply:{" "}
+            <span className="text-[#B8790A] font-bold">5 October 2026</span>
           </motion.p>
         </motion.div>
 
@@ -237,7 +235,7 @@ export default function Hero() {
           >
             <Rocket className="w-5 h-5 text-[#B8790A]" />
             <span className="font-secondary text-xs md:text-sm text-[#1C1710] font-semibold">
-              Starts <span className="text-[#B8790A]">August 22, 2026</span>
+              Starts <span className="text-[#B8790A]">10 October 2026</span>
             </span>
           </motion.div>
         </motion.div>

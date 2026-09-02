@@ -121,8 +121,8 @@ export default function uiux() {
             </motion.p>
 
             {/* CTA */}
-            <motion.div variants={heroFadeUp} className="hidden">
-              <Link href="/bridge/ui-ux/registrationform">
+            <motion.div variants={heroFadeUp}>
+              <Link href="https://forms.gle/WPxZN8R8sgTA2cWB9" target="_blank">
                 <motion.span
                   className="inline-flex items-center gap-2 font-secondary text-sm md:text-base text-white font-semibold px-7 py-3 rounded-full cursor-pointer bg-[#C94B24]"
                   whileHover={{ scale: 1.05, backgroundColor: "#b84320" }}
@@ -140,7 +140,9 @@ export default function uiux() {
               className="font-secondary text-[12px] md:text-[11px] tracking-[0.18em] text-[#F8F3EB]/60 uppercase"
             >
               No prior experience required &middot; Starts{" "}
-              <span className="text-[#C94B24]">02 Nov 2026</span>
+              <span className="text-[#C94B24]">02 Nov 2026</span> &middot;
+              Last Date to Apply{" "}
+              <span className="text-[#C94B24]">26 Oct 2026</span>
             </motion.p>
           </motion.div>
         </div>
@@ -1296,8 +1298,10 @@ export default function uiux() {
 
           {/* CTA */}
           <motion.a
-            href="/bridge/ui-ux/registrationform"
-            className="hidden bg-[#F26622] text-white font-primary font-semibold text-base px-9 py-4 rounded-full hover:bg-[#d9551a] transition-colors"
+            href="https://forms.gle/WPxZN8R8sgTA2cWB9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#F26622] text-white font-primary font-semibold text-base px-9 py-4 rounded-full hover:bg-[#d9551a] transition-colors"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
@@ -1341,6 +1345,8 @@ export default function uiux() {
 
           {/* Subtext */}
           <p className="text-white/70 text-sm md:text-xl">
+            Starts{" "}
+            <span className="text-[#F26622] font-bold">02 Nov 2026</span> ·
             Applications close{" "}
             <span className="text-[#F26622] font-bold">26 October 2026</span> ·
             Limited seats · Cohort forming now
@@ -1349,9 +1355,9 @@ export default function uiux() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
             <Link
-              href="/bridge/ui-ux/registrationform"
+              href="https://forms.gle/WPxZN8R8sgTA2cWB9"
               target="_blank"
-              className="hidden bg-[#F26622] text-white px-7 py-3 rounded-full font-semibold hover:bg-[#d9551c] transition text-center"
+              className="bg-[#F26622] text-white px-7 py-3 rounded-full font-semibold hover:bg-[#d9551c] transition text-center"
             >
               Apply Now →
             </Link>
